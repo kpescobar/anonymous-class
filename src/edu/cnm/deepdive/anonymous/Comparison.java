@@ -40,14 +40,15 @@ public class Comparison implements Comparable<Comparison> {
    Comparison[] things = {c1, c2, c3};
    Arrays.sort(things);
    System.out.println(Arrays.toString(things));
-   Arrays.sort(things, new Comparator<Comparison>() {
-
-    @Override
-    public int compare(Comparison o1, Comparison o2) {
-      return Integer.compare(o1.height, o2.height);
-    }
-     
-   });
+//   Arrays.sort(things, new Comparator<Comparison>() { // This is an anonymous class.
+//
+//    @Override
+//    public int compare(Comparison o1, Comparison o2) {
+//      return Integer.compare(o1.height, o2.height);
+//    }
+//     
+//   });
+   Arrays.sort(things, (o1, o2) -> Integer.compare(o1.height, o2.height));
    System.out.println(Arrays.toString(things));
   }
 
